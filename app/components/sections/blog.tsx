@@ -1,18 +1,34 @@
-'use client';
+import BlogCard from "../blog-card";
+import BlogHeader from "./blog-header";
 
-import React from 'react';
 
-const Blog = () => {
+
+export default function BlogSection() {
+  const blogPosts = [
+    {
+      title: "Top 5 Strategies For Monetizing Content With Crypto.",
+      description:
+        "Learn how to maximize your earnings on dtello with crypto-friendly engagement strategies.",
+      authorName: "Michael Thompson",
+      imageUrl: "/thinking-dread.png",
+    },
+    {
+      title: "Top 5 Strategies For Monetizing Content With Crypto.",
+      description:
+        "Learn how to maximize your earnings on dtello with crypto-friendly engagement strategies.",
+      authorName: "Michael Thompson",
+      imageUrl: "/thinking-dread.png",
+    },
+  ];
+
   return (
-    <section className="w-full py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Latest from Our Blog</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Blog post cards will go here */}
-        </div>
+    <section className="bg-[#EBF0EA] max-w-7xl mx-auto px-12 py-14  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0 rounded-2xl">
+      <BlogHeader />
+      <div className="grid md:grid-cols-2 gap-6">
+        {blogPosts.map((post, index) => (
+          <BlogCard key={index} {...post} />
+        ))}
       </div>
     </section>
   );
-};
-
-export default Blog;
+}
