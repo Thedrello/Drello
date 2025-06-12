@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.16.0",
@@ -24,6 +25,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "shadcn-ui": "^0.9.5",
     "tailwindcss": "^4.1.8",
     "tailwindcss-animate": "^1.0.7",
     "tw-animate-css": "^1.3.4",
