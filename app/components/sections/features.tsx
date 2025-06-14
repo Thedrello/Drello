@@ -4,7 +4,7 @@ import FeaturedCard from "../feature-card";
 
 const Features = () => {
   return (
-    <div className="m-10 mt-[20px] md:mt-[80px] lg:mt-[100px] lg:px-[60px] px-5 mb-12 md:mb-0 border-[1px] border-[#D4D4D4] p-12 rounded-[24px] ">
+    <div id="features" className="mt-[20px] md:mt-[80px] lg:mt-[100px] lg:px-[60px] px-5 mb-12 md:mb-0 border-[1px] border-[#D4D4D4] p-12 rounded-[24px] ">
       <div className="text-center justify-center ">
         <h3>FEATURES</h3>
         <div className="flex justify-center items-center flex-col md:flex-row gap-1 text-[32px] m-5">
@@ -12,7 +12,7 @@ const Features = () => {
           <Image
             height={100}
             width={100}
-            src="/squared-drello.png"
+            src="/squared-drello.svg"
             alt="squared drello"
             className="h-[50px] w-[100px]"
           />

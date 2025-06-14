@@ -22,7 +22,7 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="bg-[#EBF0EA] max-w-7xl mx-auto px-12 py-14  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0 rounded-2xl">
+    <section id="blog" className="bg-[#EBF0EA] w-full mx-auto px-12 py-14  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0 rounded-2xl">
       <BlogHeader />
       <div className="grid md:grid-cols-2 gap-6">
         {blogPosts.map((post, index) => (

@@ -6,17 +6,21 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="relative bg-footer text-white pt-12 pb-32 px-4 md:px-6 lg:px-8 min-h-[450px] bg-[url('/footer.png')] bg-cover bg-no-repeat">
+    <footer className="relative bg-footer text-white pt-12 pb-32 px-4 md:px-6 lg:px-[72px] min-h-[450px] md:bg-[url('/footer.png')] bg-[url('/Mobile.png')] bg-cover bg-no-repeat">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 text-center lg:text-left">
-          <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
+        <div className="lg:col-span-3 mb-8 lg:mb-0 flex w-full justify-start">
             <Image
-              src="group.svg"
+              src="/footer-logo.svg"
               alt="Drello Logo"
-              width={120}
-              height={40}
-              className="mb-8"
+              width={200}
+              height={50}
+              className="w-[255px] h-[55px] mx-auto lg:mx-0"
             />
+           </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 text-center lg:text-left">
+          
+          <div className="lg:col-span-3 flex flex-col justify-center lg:items-start mt-5">
+            
             <h2 className="text-2xl font-semibold mb-6 lg:hidden">
               Contact Us
             </h2>

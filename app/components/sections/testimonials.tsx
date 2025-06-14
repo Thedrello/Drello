@@ -50,9 +50,9 @@ const Testiminials = () => {
           <Image
             height={100}
             width={100}
-            src="/squared-drello.png"
+            src="/squared-testimonial.svg"
             alt="squared drello"
-            className="h-[50px] w-[100px] my-2"
+            className="h-[52px] w-[274px] my-2"
           />
           <h1 className="font-medium text-[36px]">SUCCESS STORIES</h1>
           <h3 className="my-2 font-medium text-[20px]">
