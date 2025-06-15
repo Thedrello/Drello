@@ -22,7 +22,7 @@ const Features = () => {
       <div className="grid lg:grid-cols-3 gap-4 container mx-auto grid-cols-1">
         <FeaturedCard
           tagLine="CONTENT CREATION TOOLS"
-          image="/girl-kitchen.png"
+          image="/feature-image1.png"
           title="Create High-Impact Content"
           description="With dRello's intuitive editor, publishing your ideas has never been easier. Engage your audience, showcase your expertise, and earn for the impact you make."
           buttonText="Preview Content Tools"
@@ -30,7 +30,7 @@ const Features = () => {
         />
         <FeaturedCard
           tagLine="JOB MARKETPLACE"
-          image="/girl-laptop.png"
+          image="/feature-image2.png"
           title="Complete Jobs, Earn Rewards"
           description="Choose from a variety of tasks from reviews to feedback surveys that pay you for your time. You pick the tasks that interest you and earn crypto for each one."
           buttonText="Explore Job Opportunities"
@@ -38,7 +38,7 @@ const Features = () => {
         />
         <FeaturedCard
           tagLine="CRYPTO WALLET INTEGRATION"
-          image="/girl-blueBg.png"
+          image="/feature-image3.png"
           title="Get Paid Directly In Crypto"
           description="Earning on dRello is simple. Connect your wallet, see your earnings, and withdraw in Ethereum whenever you're ready."
           buttonText="Preview Content Tools"

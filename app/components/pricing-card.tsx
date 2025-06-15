@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function PricingCard() {
   return (
-    <div className="w-full">
-      <Card className="bg-pricing-orange border-none shadow-none">
-        <CardContent className="p-6 md:p-8 lg:p-12">
-          <div className="grid grid-cols-[1fr,auto] md:gap-8 gap-3  place-items-center items-center">
+    <div className="w-full bg-[url('/Dash.png')] bg-cover bg-no-repeat md:h-[360px] md:w-[590px]">
+      <Card className="border-none shadow-none bg-transparent">
+        <CardContent className="p-6 md:p-6 lg:p-8">
+          <div className=" md:flex grid grid-cols-[1fr,auto] md:gap-8 gap-3 place-items-center items-center">
             <div className="space-y-4">
-              <p className="px-[16px]  w-fit py-[10px] rounded-full border-[#525252] text-[16px] leading-[120%] text-[#525252] border-2 bg-white">
+              <p className="px-[16px] w-fit py-[10px] rounded-full border-[#525252] text-[16px] text-[#525252] border-2 bg-white">
                 PRICING TIER
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-yellow-800">
@@ -22,9 +22,9 @@ export default function PricingCard() {
             </div>
             <div className="relative lg:w-[200px] w-[100px] aspect-square">
               <Image
-                src="/jean-yellow.png"
+                src="/Media2.png"
                 alt="Pricing illustration"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg md:w-[253.63px] md:h-[201px]"
                 width={1000}
                 height={1000}
               />

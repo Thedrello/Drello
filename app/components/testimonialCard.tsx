@@ -46,25 +46,31 @@ export function TestimonialCard({
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
       className={cn(
-        "relative h-full w-full transition-all border md:border-0 border-gray-600/30 overflow-hidden duration-500 cursor-pointer",
+        "relative h-[766px] w-full transition-all border md:border-0 border-gray-600/30 overflow-hidden duration-500 cursor-pointer ",
         isActive && !isAnotherHovered ? "w-full" : "lg:w-1/2",
         !isActive && "hover:w-full"
       )}
     >
-      <div className={cn("rounded-3xl overflow-hidden bg-[#FFF0F1]")}>
-        <div className="relative w-full lg:h-[600px] h-[750px]">
+      <div className={cn("rounded-3xl overflow-hidden bg-[#FFF0F1] h-full")}>
+        <div className={cn(
+              "object-cover transition-transform duration-500 ease-in-out relative w-full lg:h-[600px] h-[750px]",
+              isActive ? "md:scale-85 md:translate-y-[-10%]" : "md:scale-100 md:translate-y-0",
+            )}>
           <Image
             src={image}
             width={1000}
             height={1900}
             alt={name}
-            className="h-full w-full object-cover"
+            className={cn(
+              "h-full w-full md:object-cover object-contain",
+              isActive ? "md:object-contain" : "md:object-cover"
+            )}
           />
         </div>
         <div
           id="down"
           className={cn(
-            "absolute bottom-0 left-0 right-0 p-6 bg-testimonial-yellow min-h-[45%] overflow-hidden py-24 transition-all duration-500 ease-in-out",
+            "absolute bottom-0 left-0 right-0 p-6 min-h-[45%] overflow-hidden py-24 transition-all duration-500 ease-in-out bg-[url('/Vector1.png')] bg-cover bg-no-repeat",
             showContent
               ? "lg:opacity-100 lg:translate-y-0"
               : "lg:opacity-0 lg:translate-y-full"

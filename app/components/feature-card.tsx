@@ -34,16 +34,17 @@ const FeaturedCard = ({
         `}>
             <h3 className={`
                 px-3 sm:px-[16px]
-                mb-4 sm:mb-8
+                mb-4 md:mb-11
                 w-fit 
                 py-2 sm:py-[10px]
                 rounded-full 
                 border-[#525252]
-                ml-2 sm:ml-3
+                ml-2 md:ml-4
                 text-sm sm:text-[16px]
                 leading-[120%]
                 text-[#525252]
                 border-2
+                
                 ${position === 2 && "bg-white rounded-full absolute z-20 top-3 sm:top-5"}
             `}>
                 {tagLine}

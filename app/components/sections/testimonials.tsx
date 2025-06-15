@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import { useState } from "react";
-import { TestimonialCard } from "../tetimonialCard";
+import { TestimonialCard } from "../testimonialCard";
 
 
 const testimonials = [
@@ -14,7 +14,7 @@ const testimonials = [
     time: "2hrs ago",
     content:
       "With dRello, I finally found a way to earn for my content. It's refreshing to work with brands that value real voices and ideas",
-    image: "/dreads.png",
+    image: "/User1.png",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const testimonials = [
     time: "3hrs ago",
     content:
       "With dRello, I finally found a way to earn for my content. It's refreshing to work with brands that value real voices and ideas",
-    image: "/sweater.png",
+    image: "/User-2.png",
   },
   {
     id: 3,
@@ -32,27 +32,27 @@ const testimonials = [
     time: "4hrs ago",
     content:
       "With dRello, I finally found a way to earn for my content. It's refreshing to work with brands that value real voices and ideas",
-    image: "/igbo-guy.png",
+    image: "/User3.png",
   },
 ];
 
-const Testiminials = () => {
+const Testimonials = () => {
   const [activeId, setActiveId] = useState(2);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <div className="bg-testimonial px-4  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0  lg:px-[52px] lg:py-[40px] py-4">
-      <h3 className=" px-[16px]  w-fit py-[10px] rounded-full border-[#525252] text-[16px] leading-[120%] text-[#525252] border-2">
+    <div className="px-4  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0  lg:px-[52px] lg:py-[40px] py-4 bg-[url('/Testimonials-bg.png')] bg-cover bg-no-repeat">
+      <h3 className=" px-[16px] font-normal w-fit py-[10px] rounded-full border-[#A3A3A3] text-[20px] text-[#525252] border-2">
         TESTIMONIALS
       </h3>
-      <div className="flex justify-center flex-col lg:flex-row relative  items-center ">
+      <div className="flex justify-center flex-col lg:flex-row relative md:mt-[39px] ">
         <div className=" flex flex-col justify-center h-full">
           <Image
-            height={100}
-            width={100}
+            height={1000}
+            width={1000}
             src="/squared-testimonial.svg"
             alt="squared drello"
-            className="h-[52px] w-[274px] my-2"
+            className="h-[52px] w-[274px] left-0"
           />
           <h1 className="font-medium text-[36px]">SUCCESS STORIES</h1>
           <h3 className="my-2 font-medium text-[20px]">
@@ -86,4 +86,4 @@ const Testiminials = () => {
   );
 };
 
-export default Testiminials;
+export default Testimonials;
