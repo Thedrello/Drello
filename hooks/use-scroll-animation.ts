@@ -9,7 +9,7 @@ export function useScrollAnimation(threshold = 0.1) {
   const controls = useAnimation()
   const inView = useInView(ref, {
     amount: threshold,
-    once: true, // Animation triggers only once
+    once: false, 
   })
 
   useEffect(() => {

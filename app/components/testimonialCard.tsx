@@ -46,34 +46,32 @@ export function TestimonialCard({
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
       className={cn(
-        "relative h-[766px] w-full transition-all border md:border-0 border-gray-600/30 overflow-hidden duration-500 cursor-pointer ",
+        "relative h-[766px] w-full transition-all border md:border-0 border-gray-600/30 overflow-hidden duration-500 cursor-pointer",
         isActive && !isAnotherHovered ? "w-full" : "lg:w-1/2",
         !isActive && "hover:w-full"
       )}
     >
       <div className={cn("rounded-3xl overflow-hidden bg-[#FFF0F1] h-full")}>
-        <div className={cn(
-              "object-cover transition-transform duration-500 ease-in-out relative w-full lg:h-[600px] h-[750px]",
-              isActive ? "md:scale-85 md:translate-y-[-10%]" : "md:scale-100 md:translate-y-0",
-            )}>
+        <div
+          className={cn(
+            "object-cover transition-transform duration-500 ease-in-out relative w-full h-[750px]",
+            isActive ? "scale-100" : "scale-100"
+          )}
+        >
           <Image
             src={image}
             width={1000}
             height={1900}
             alt={name}
-            className={cn(
-              "h-full w-full md:object-cover object-contain",
-              isActive ? "md:object-contain" : "md:object-cover"
-            )}
+            className="h-full w-full object-contain md:h-[70%]"
           />
         </div>
         <div
-          id="down"
           className={cn(
             "absolute bottom-0 left-0 right-0 p-6 min-h-[45%] overflow-hidden py-24 transition-all duration-500 ease-in-out bg-[url('/Vector1.png')] bg-cover bg-no-repeat",
-            showContent
-              ? "lg:opacity-100 lg:translate-y-0"
-              : "lg:opacity-0 lg:translate-y-full"
+            showContent && isActive
+              ? "opacity-100 translate-y-0"
+              : "opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-full"
           )}
         >
           <div className="inline-block px-3 py-1 mb-3 text-[12px] font-medium bg-amber-100 rounded-full">

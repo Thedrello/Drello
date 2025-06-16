@@ -7,9 +7,9 @@ import BeforeFooter from "./components/sections/before-footer"
 import BlogSection from "./components/sections/blog"
 import Features from "./components/sections/features"
 import Testimonials from "./components/sections/testimonials"
-import Pricing from "./components/sections/pricing"
 import NavBar from "./components/sections/nav-bar"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import PricingHeader from "./components/sections/pricing-header"
 
 export default function Home() {
   const { ref: heroRef, controls: heroControls } = useScrollAnimation()
@@ -71,7 +71,7 @@ export default function Home() {
           bounce: 0.4,
         }}
       >
-        <Pricing />
+        <PricingHeader />
       </motion.div>
 
       {/* Blog - Blur fade in */}
@@ -93,16 +93,8 @@ export default function Home() {
       >
         <BeforeFooter />
       </motion.div>
-
-      {/* Footer - Fade up */}
-      <motion.div
-        ref={footerRef}
-        initial={{ opacity: 0, y: 50 }}
-        animate={footerControls}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
         <Footer />
-      </motion.div>
+     
     </main>
   )
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; // Import icons for hamburger menu
+import { Menu, X } from "lucide-react";
 
 interface NavLinksProps {
   routeName: string;
@@ -53,10 +53,10 @@ const NavBar = () => {
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-row items-center gap-[100px] ml-auto">
-          <div>
-            <ul className="flex flex-row items-center gap-14">
+        {/* Desktop and Tablet Navigation */}
+        <div className="hidden md:flex flex-row items-center gap-4 lg:gap-[100px] ml-auto">
+          <div className="">
+            <ul className="flex flex-row items-center gap-6 lg:gap-14">
               {navLinks.map((link) => (
                 <li
                   key={link.routeName}
@@ -66,8 +66,8 @@ const NavBar = () => {
                     href={link.route}
                     className={`nav-link text-sm capitalize hover:cursor-pointer hover:text-[#fdc316] transition-all duration-300 ease-in-out transform hover:scale-105 hover:tracking-wide ${
                       activeLink === link.route
-                        ? "text-[#fdc316] font-bold text-[20px]"
-                        : "text-[#171717] dark:text-neutral-50 font-normal text-[20px]"
+                        ? "text-[#fdc316] font-bold md:text-[16px] lg:text-[20px]"
+                        : "text-[#171717] dark:text-neutral-50 font-normal md:text-[16px] lg:text-[20px]"
                     }`}
                   >
                     {link.routeName}
@@ -83,12 +83,12 @@ const NavBar = () => {
               ))}
             </ul>
           </div>
-          <div className="flex items-center gap-x-[40px]">
-            <span className="font-semibold text-[#262626] text-[16px]">
+          <div className="flex items-center gap-x-4 lg:gap-x-[40px]">
+            <span className="hidden lg:block font-semibold text-[#262626] text-[16px]">
               How It Works
             </span>
-            <Button className="bg-[#fdc316] hover:bg-[hsl(45,98%,49%)] rounded-full py-3 gap-x-2 flex justify-center items-center transition duration-300 ease-in-out w-[151px] h-[48px]">
-              <span className="font-semibold text-[#262626] text-center text-[16px]">
+            <Button className="bg-[#fdc316] hover:bg-[hsl(45,98%,49%)] rounded-full py-3 gap-x-2 flex justify-center items-center transition duration-300 ease-in-out md:w-[120px] lg:w-[151px] h-[48px]">
+              <span className="font-semibold text-[#262626] text-center md:text-[14px] lg:text-[16px]">
                 Get Started
               </span>
             </Button>
