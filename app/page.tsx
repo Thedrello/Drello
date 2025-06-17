@@ -21,7 +21,7 @@ export default function Home() {
  
 
   return (
-    <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto ">
+    <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto overflow-hidden">
       <NavBar />
 
       {/* Hero Section - Fade up with stagger */}
