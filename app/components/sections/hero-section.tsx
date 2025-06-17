@@ -21,7 +21,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="w-full mx-auto px-4 py-16 flex flex-col md:flex-row justify-between gap-6 md:gap-20 lg:gap-40 items-center">
+    <section className="w-full mx-auto lg:p-16 p-10 flex flex-col md:flex-row justify-between gap-6 md:gap-20 lg:gap-40 items-center">
       {/* Left Column - Text Content */}
       <div className="w-full md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-4 lg:pr-8">
         <div className="w-full md:max-w-[600px] lg:max-w-[774px] md:mx-auto mb-8">

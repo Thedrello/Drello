@@ -41,7 +41,7 @@ const Testimonials = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <div className="px-4  mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0  lg:px-[52px] lg:py-[40px] py-4 bg-[url('/Testimonials-bg.png')] bg-cover bg-no-repeat">
+    <div className="px-8 mt-[20px] md:mt-[80px] lg:mt-[100px] mb-12 md:mb-0  lg:px-[52px] lg:py-[40px] py-4 bg-[url('/Testimonials-bg.png')] bg-cover bg-no-repeat">
       <h3 className=" px-[16px] font-normal w-fit py-[10px] rounded-full border-[#A3A3A3] text-[20px] text-[#525252] border-2">
         TESTIMONIALS
       </h3>

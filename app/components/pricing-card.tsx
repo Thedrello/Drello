@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PricingCard() {
   return (
-    <div className="w-full bg-[url('/Dash.png')] bg-cover bg-no-repeat min-h-[300px] md:h-[360px] md:w-[590px]">
+    <div className="w-full bg-[url('/Dash.png')] bg-cover bg-no-repeat min-h-[300px] md:h-[360px] md:w-[590px] rounded-3xl">
       <Card className="border-none shadow-none bg-transparent h-full">
         <CardContent className="p-4 md:p-6 lg:p-8 h-full">
           <div className="flex flex-row items-start md:items-center gap-4 md:gap-6 h-full">
@@ -20,7 +20,7 @@ export default function PricingCard() {
                 that let you control how you earn and grow.
               </p>
             </div>
-            <div className="relative w-[100px] md:w-[180px] lg:w-[220px] aspect-square shrink-0">
+            <div className="relative w-[120px] md:w-[190px] lg:w-[240px] aspect-square shrink-0 mt-10">
               <Image
                 src="/Media2.png"
                 alt="Pricing illustration"

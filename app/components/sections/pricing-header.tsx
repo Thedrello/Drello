@@ -5,7 +5,7 @@ import RewardsCard from "../reward-card";
 
 export default function PricingHeader() {
   return (
-    <div className="mx-auto w-full px-2 sm:px-4 py-6 md:py-6 lg:py-8 md:bg-[#EBF0EA] rounded-2xl">
+    <div className="mx-auto w-full px-2 sm:px-4 py-6 md:py-6 lg:py-8 md:bg-[#EBF0EA] rounded-2xl mt-12 md:mt-16 lg:mt-20 xl:mt-24 max-w-screen-2xl" id="pricing">
       <Card className="border-none shadow-none bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 place-items-center">
           <CardContent className="p-0 w-full flex justify-center">

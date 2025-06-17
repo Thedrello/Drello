@@ -55,7 +55,7 @@ export function TestimonialCard({
         <div
           className={cn(
             "object-cover transition-transform duration-500 ease-in-out relative w-full h-[750px]",
-            isActive ? "scale-100" : "scale-100"
+            isActive ? "lg:scale-80" : "lg:scale-100"
           )}
         >
           <Image
@@ -63,7 +63,8 @@ export function TestimonialCard({
             width={1000}
             height={1900}
             alt={name}
-            className="h-full w-full object-contain md:h-[70%]"
+            className={cn("h-full w-full lg:object-cover object-contain md:h-[70%]"
+              , isActive ? "lg:object-contain" : "lg:object-cover")}
           />
         </div>
         <div

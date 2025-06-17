@@ -18,7 +18,7 @@ export default function Home() {
   const { ref: pricingRef, controls: pricingControls } = useScrollAnimation()
   const { ref: blogRef, controls: blogControls } = useScrollAnimation()
   const { ref: beforeFooterRef, controls: beforeFooterControls } = useScrollAnimation()
-  const { ref: footerRef, controls: footerControls } = useScrollAnimation()
+ 
 
   return (
     <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto ">
@@ -29,7 +29,7 @@ export default function Home() {
         ref={heroRef}
         initial={{ opacity: 0, y: 100 }}
         animate={heroControls}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <HeroSection />
       </motion.div>
@@ -39,7 +39,7 @@ export default function Home() {
         ref={featuresRef}
         initial={{ opacity: 0, x: -100 }}
         animate={featuresControls}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
       >
         <Features />
       </motion.div>
@@ -50,10 +50,10 @@ export default function Home() {
         initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
         animate={testimonialsControls}
         transition={{
-          duration: 0.8,
+          duration: 1,
           ease: "easeOut",
           scale: { type: "spring", stiffness: 100 },
-          rotate: { duration: 0.6 },
+          rotate: { duration: 0.8, ease: "easeOut"},
         }}
       >
         <Testimonials />
@@ -65,10 +65,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 150 }}
         animate={pricingControls}
         transition={{
-          duration: 0.8,
+          duration: 1,
           ease: "easeOut",
           type: "spring",
-          bounce: 0.4,
+          bounce: 0.8,
         }}
       >
         <PricingHeader />
@@ -79,7 +79,7 @@ export default function Home() {
         ref={blogRef}
         initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
         animate={blogControls}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <BlogSection />
       </motion.div>

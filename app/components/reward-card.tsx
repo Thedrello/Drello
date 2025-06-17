@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function RewardsCard() {
   return (
-    <div className="w-full bg-[url('/Dash1.png')] bg-cover bg-no-repeat min-h-[300px] md:h-[360px] md:w-[590px] overflow-hidden mb-8">
+    <div className="w-full bg-[url('/Dash1.png')] bg-cover bg-no-repeat min-h-[300px] md:h-[360px] md:w-[590px] overflow-hidden mb-8 rounded-3xl">
       <Card className="bg-reward-green border-none shadow-none h-full">
         <CardContent className="p-4 md:p-6 lg:p-8 h-full">
           <div className="flex flex-row items-start md:items-center gap-4 md:gap-6 h-full">
@@ -20,7 +20,7 @@ export default function RewardsCard() {
                 in Ethereum with no hassle.
               </p>
             </div>
-            <div className="relative w-[120px] md:w-[200px] lg:w-[250px] aspect-square shrink-0">
+            <div className="relative w-[120px] md:w-[200px] lg:w-[250px] aspect-square shrink-0 mt-10">
               <Image
                 src="/Media1.png"
                 alt="Rewards illustration"
