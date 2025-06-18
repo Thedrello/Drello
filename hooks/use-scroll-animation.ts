@@ -4,42 +4,88 @@ import { useEffect } from "react"
 import { useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-export const useScrollAnimation = () => {
+type AnimationType = 'fadeUp' | 'slideIn' | 'scaleRotate' | 'bounce' | 'blurFade' | 'slideFromSide'
+
+export const useScrollAnimation = (type: AnimationType) => {
   const controls = useAnimation()
   const [ref, inView] = useInView({
-    threshold: 0.2, // Trigger when 20% of element is visible
-    triggerOnce: false, // Remove triggerOnce to allow repeated animations
+    threshold: 0.2,
+    triggerOnce: false,
   })
+
+  const getInitialState = (type: AnimationType) => {
+    switch (type) {
+      case 'fadeUp':
+        return { opacity: 0, y: 100 }
+      case 'slideIn':
+        return { opacity: 0, x: -100 }
+      case 'scaleRotate':
+        return { opacity: 0, scale: 0.8, rotate: -5 }
+      case 'bounce':
+        return { opacity: 0, y: 150 }
+      case 'blurFade':
+        return { opacity: 0, filter: "blur(10px)", y: 50 }
+      case 'slideFromSide':
+        return { opacity: 0, x: 200 }
+      default:
+        return { opacity: 0 }
+    }
+  }
+
+  const getFinalState = (type: AnimationType) => {
+    switch (type) {
+      case 'fadeUp':
+        return { opacity: 1, y: 0 }
+      case 'slideIn':
+        return { opacity: 1, x: 0 }
+      case 'scaleRotate':
+        return { opacity: 1, scale: 1, rotate: 0 }
+      case 'bounce':
+        return { opacity: 1, y: 0 }
+      case 'blurFade':
+        return { opacity: 1, filter: "blur(0px)", y: 0 }
+      case 'slideFromSide':
+        return { opacity: 1, x: 0 }
+      default:
+        return { opacity: 1 }
+    }
+  }
+
+  const getTransition = (type: AnimationType) => {
+    switch (type) {
+      case 'scaleRotate':
+        return {
+          duration: 1,
+          ease: "easeOut",
+          scale: { type: "spring", stiffness: 100 },
+          rotate: { duration: 0.8 }
+        }
+      case 'bounce':
+        return {
+          duration: 1,
+          type: "spring",
+          bounce: 0.8
+        }
+      case 'blurFade':
+        return {
+          duration: 1.5,
+          ease: "easeOut"
+        }
+      default:
+        return {
+          duration: 1,
+          ease: "easeOut"
+        }
+    }
+  }
 
   useEffect(() => {
     if (inView) {
-      controls.start({
-        opacity: 1,
-        x: 0,
-        y: 0,
-        scale: 1,
-        rotate: 0,
-        filter: "blur(0px)",
-      })
+      controls.start(getFinalState(type))
     } else {
-      // Reset animation when element is out of view
-      controls.start({
-        opacity: 0,
-        x: getInitialX(),
-        y: getInitialY(),
-        scale: getInitialScale(),
-        rotate: getInitialRotate(),
-        filter: getInitialFilter(),
-      })
+      controls.start(getInitialState(type))
     }
-  }, [controls, inView])
+  }, [controls, inView, type])
 
-  return { ref, controls }
+  return { ref, controls, transition: getTransition(type) }
 }
-
-// Helper functions to match initial states from components
-const getInitialX = () => 0
-const getInitialY = () => 100
-const getInitialScale = () => 0.8
-const getInitialRotate = () => -5
-const getInitialFilter = () => "blur(10px)"
