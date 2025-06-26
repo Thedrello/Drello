@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer"
 
 type AnimationType = 'fadeUp' | 'slideIn' | 'scaleRotate' | 'bounce' | 'blurFade' | 'slideFromSide'
 
+
 export const useScrollAnimation = (type: AnimationType) => {
   const controls = useAnimation()
   const [ref, inView] = useInView({

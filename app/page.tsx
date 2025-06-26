@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, easeOut } from "framer-motion"
 import HeroSection from "@/app/components/sections/hero-section"
 import Footer from "./components/sections/footer"
 import BeforeFooter from "./components/sections/before-footer"
@@ -12,12 +12,42 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import PricingHeader from "./components/sections/pricing-header"
 
 export default function Home() {
-  const { ref: heroRef, controls: heroControls, transition: heroTransition } = useScrollAnimation('fadeUp')
-  const { ref: featuresRef, controls: featuresControls, transition: featuresTransition } = useScrollAnimation('slideIn')
-  const { ref: testimonialsRef, controls: testimonialsControls, transition: testimonialsTransition } = useScrollAnimation('scaleRotate')
-  const { ref: pricingRef, controls: pricingControls, transition: pricingTransition } = useScrollAnimation('bounce')
-  const { ref: blogRef, controls: blogControls, transition: blogTransition } = useScrollAnimation('blurFade')
-  const { ref: beforeFooterRef, controls: beforeFooterControls, transition: beforeFooterTransition } = useScrollAnimation('slideFromSide')
+  type AnimationTransition = {
+    duration?: number
+    ease?: ((t: number) => number) | string
+    [key: string]: any
+  }
+
+  const { ref: heroRef, controls: heroControls, transition: heroTransition } = useScrollAnimation('fadeUp') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: featuresRef, controls: featuresControls, transition: featuresTransition } = useScrollAnimation('slideIn') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: testimonialsRef, controls: testimonialsControls, transition: testimonialsTransition } = useScrollAnimation('scaleRotate') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: pricingRef, controls: pricingControls, transition: pricingTransition } = useScrollAnimation('bounce') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: blogRef, controls: blogControls, transition: blogTransition } = useScrollAnimation('blurFade') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: beforeFooterRef, controls: beforeFooterControls, transition: beforeFooterTransition } = useScrollAnimation('slideFromSide') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
 
   return (
     <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto overflow-hidden">
@@ -27,7 +57,10 @@ export default function Home() {
         ref={heroRef}
         initial={{ opacity: 0, y: 100 }}
         animate={heroControls}
-        transition={heroTransition}
+        transition={{
+          duration: heroTransition?.duration ?? 0.8,
+          ease: typeof heroTransition?.ease === "function" ? heroTransition.ease : easeOut
+        }}
       >
         <HeroSection />
       </motion.div>
@@ -36,7 +69,10 @@ export default function Home() {
         ref={featuresRef}
         initial={{ opacity: 0, x: -100 }}
         animate={featuresControls}
-        transition={featuresTransition}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
       >
         <Features />
       </motion.div>
@@ -45,7 +81,10 @@ export default function Home() {
         ref={testimonialsRef}
         initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
         animate={testimonialsControls}
-        transition={testimonialsTransition}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
       >
         <Testimonials />
       </motion.div>
@@ -54,7 +93,12 @@ export default function Home() {
         ref={pricingRef}
         initial={{ opacity: 0, y: 150 }}
         animate={pricingControls}
-        transition={pricingTransition}
+        transition={{
+          duration: pricingTransition?.duration ?? 0.8,
+          ease: typeof pricingTransition?.ease === "function" ? pricingTransition.ease : "easeOut",
+          type: (pricingTransition as any)?.type,
+          bounce: (pricingTransition as any)?.bounce,
+        }}
       >
         <PricingHeader />
       </motion.div>
@@ -63,7 +107,12 @@ export default function Home() {
         ref={blogRef}
         initial={{ opacity: 0, filter: "blur(10px)", y: 50 }}
         animate={blogControls}
-        transition={blogTransition}
+        transition={{
+          duration: blogTransition?.duration ?? 0.8,
+          ease: typeof blogTransition?.ease === "function" ? blogTransition.ease : "easeOut",
+          type: (blogTransition as any)?.type,
+          bounce: (blogTransition as any)?.bounce,
+        }}
       >
         <BlogSection />
       </motion.div>
@@ -72,7 +121,12 @@ export default function Home() {
         ref={beforeFooterRef}
         initial={{ opacity: 0, x: 200 }}
         animate={beforeFooterControls}
-        transition={beforeFooterTransition}
+        transition={{
+          duration: beforeFooterTransition?.duration ?? 0.8,
+          ease: typeof beforeFooterTransition?.ease === "function" ? beforeFooterTransition.ease : "easeOut",
+          type: (beforeFooterTransition as any)?.type,
+          bounce: (beforeFooterTransition as any)?.bounce,
+        }}
       >
         <BeforeFooter />
       </motion.div>
