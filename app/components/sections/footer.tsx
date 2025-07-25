@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="relative bg-footer text-white pt-12 pb-32 px-4 md:px-6 lg:px-[72px] min-h-[450px] lg:bg-[url('/footer.png')] bg-[url('/Mobile.png')] bg-cover bg-no-repeat">
+    <footer className="relative bg-footer text-white pt-12 pb-32 px-4 md:px-6 lg:px-[72px] min-h-[450px] lg:bg-[url('/Footer.png')] bg-[url('/Mobile.png')] bg-cover bg-no-repeat">
       <div className="max-w-7xl mx-auto">
         <div className="lg:col-span-3 mb-8 lg:mb-0 flex w-full justify-start">
             <Image
