@@ -17,7 +17,7 @@ export const useScrollAnimation = (type: AnimationType) => {
   const getInitialState = (type: AnimationType) => {
     switch (type) {
       case 'fadeUp':
-        return { opacity: 0, y: 100 }
+        return { opacity: 0, y: 50 }
       case 'slideIn':
         return { opacity: 0, x: -100 }
       case 'scaleRotate':

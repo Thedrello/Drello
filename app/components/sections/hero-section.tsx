@@ -21,7 +21,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="w-full mx-auto lg:px-0 px-4 py-10 lg:py-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-0">
+    <section className="w-full mx-auto lg:px-0 px-4 py-10 lg:py-1 0 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-0">
       {/* Left Column */}
       <div className="w-full lg:w-[774px] flex flex-col items-start">
         <h1 className="text-4xl md:text-5xl lg:text-[64px] font-medium tracking-tight mb-6 leading-[1.1]">

@@ -52,10 +52,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto overflow-hidden">
       <NavBar />
-
+{/* <div className="mb-[1px]" /> */}
       <motion.div
         ref={heroRef}
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={heroControls}
         transition={{
           duration: heroTransition?.duration ?? 0.8,
