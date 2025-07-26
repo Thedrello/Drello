@@ -10,6 +10,7 @@ import Testimonials from "./components/sections/testimonials"
 import NavBar from "./components/sections/nav-bar"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import PricingHeader from "./components/sections/pricing-header"
+import HowItWorks from "./components/sections/how-it-works"
 
 export default function Home() {
   type AnimationTransition = {
@@ -64,7 +65,7 @@ export default function Home() {
       >
         <HeroSection />
       </motion.div>
-
+      <HowItWorks/>
       <motion.div
         ref={featuresRef}
         initial={{ opacity: 0, x: -100 }}
