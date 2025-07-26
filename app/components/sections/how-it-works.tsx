@@ -32,7 +32,7 @@ export default function HowItWorks() {
           How it Works
         </h1>
 
-        <div className="flex justify-center items-center flex-col gap-1 text-[32px] m-5">
+        <div className="lg:flex justify-center items-center flex-col gap-1 text-[32px] m-5 hidden">
           <div className="flex">
           <span className="font-medium">HOW</span>
           <Image
@@ -48,21 +48,39 @@ export default function HowItWorks() {
           </div>
           <p> WAY TO EARN ONLINE</p>
         </div>
+        {/* Mobile Layout */}
+        <div className="flex justify-center items-center flex-col text-[20px] m-5 lg:hidden">
+          <div className="flex">
+          <span className="font-normal">HOW</span>
+          <Image
+            height={100}
+            width={100}
+            src="/squared-drello.svg"
+            alt="squared drello"
+            className="h-[40px] w-[100px]"
+          />
+          <span className="font-normal">
+            WORKS, YOUR
+          </span>
+          </div>
+          <p> NEW WAY TO EARN ONLINE</p>
+        </div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="block md:hidden space-y-4">
           {/* Blue card - Mobile */}
-          <div className="card relative w-full min-h-[320px] overflow-hidden rounded-2xl">
+          <div className="card relative w-[343px] min-h-[320px] overflow-hidden rounded-2xl">
             <Image
               src="/blue-card.png"
               alt="Create Content Background"
-              fill
-              className="object-cover"
+              width={343}
+              height={442}
+              className="object-cover w-full h-full absolute"
               sizes="(max-width: 768px) 100vw"
             />
-            <div className="absolute flex flex-col justify-between">
+            <div className="relative flex flex-col justify-between">
               <div>
                 <h2 className="text-xl font-bold leading-7 text-[#1565C0] mb-4">
                   Create Content That <br /> Matters
@@ -73,11 +91,7 @@ export default function HowItWorks() {
                   get seen; it makes an impact.
                 </p>
               </div>
-              <div className="flex justify-end">
-                <div className="arrow-icon bg-[#FFB300] rounded-full p-2.5 w-10 h-10 flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
+            
             </div>
           </div>
 
@@ -100,11 +114,7 @@ export default function HowItWorks() {
                   surveys, or social shares.
                 </p>
               </div>
-              <div className="flex justify-end">
-                <div className="arrow-icon bg-[#FFB300] rounded-full p-2.5 w-10 h-10 flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
+              
             </div>
           </div>
 
@@ -127,11 +137,7 @@ export default function HowItWorks() {
                   reward to your wallet.
                 </p>
               </div>
-              <div className="flex justify-end">
-                <div className="arrow-icon bg-[#FFB300] rounded-full p-2.5 w-10 h-10 flex items-center justify-center shadow-lg">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
