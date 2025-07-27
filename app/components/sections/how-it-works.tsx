@@ -91,7 +91,6 @@ export default function HowItWorks() {
                   get seen; it makes an impact.
                 </p>
               </div>
-            
             </div>
           </div>
 
