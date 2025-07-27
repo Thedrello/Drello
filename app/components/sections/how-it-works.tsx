@@ -70,7 +70,7 @@ export default function HowItWorks() {
       <div className="w-full max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="block md:hidden space-y-4">
-          {/* Blue card - Mobile */}
+          
           <div className="card relative w-[343px] min-h-[320px] overflow-hidden rounded-2xl">
             <Image
               src="/blue-card.png"
