@@ -4,8 +4,15 @@ import { useEffect } from "react"
 import { useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
-type AnimationType = 'fadeUp' | 'slideIn' | 'scaleRotate' | 'bounce' | 'blurFade' | 'slideFromSide'
-
+type AnimationType =
+  | 'fadeUp'
+  | 'slideIn'
+  | 'scaleRotate'
+  | 'bounce'
+  | 'blurFade'
+  | 'slideFromSide'
+  | 'fadeInUp'       
+  | 'slideInRight'    
 
 export const useScrollAnimation = (type: AnimationType) => {
   const controls = useAnimation()
@@ -28,6 +35,10 @@ export const useScrollAnimation = (type: AnimationType) => {
         return { opacity: 0, filter: "blur(10px)", y: 50 }
       case 'slideFromSide':
         return { opacity: 0, x: 200 }
+      case 'fadeInUp': 
+        return { opacity: 0, y: 60 }
+      case 'slideInRight': 
+        return { opacity: 0, x: 200 }
       default:
         return { opacity: 0 }
     }
@@ -46,6 +57,10 @@ export const useScrollAnimation = (type: AnimationType) => {
       case 'blurFade':
         return { opacity: 1, filter: "blur(0px)", y: 0 }
       case 'slideFromSide':
+        return { opacity: 1, x: 0 }
+      case 'fadeInUp': // For HowItWorks
+        return { opacity: 1, y: 0 }
+      case 'slideInRight': // For PricingHeader
         return { opacity: 1, x: 0 }
       default:
         return { opacity: 1 }
@@ -71,6 +86,17 @@ export const useScrollAnimation = (type: AnimationType) => {
         return {
           duration: 1.5,
           ease: "easeOut"
+        }
+      case 'fadeInUp':
+        return {
+          duration: 0.8,
+          ease: "easeOut"
+        }
+      case 'slideInRight':
+        return {
+          duration: 0.8,
+          ease: "easeOut",
+          type: "tween"
         }
       default:
         return {

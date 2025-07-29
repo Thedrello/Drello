@@ -34,7 +34,12 @@ export default function Home() {
     controls: any
     transition: AnimationTransition
   }
-  const { ref: pricingRef, controls: pricingControls, transition: pricingTransition } = useScrollAnimation('bounce') as {
+  const { ref: howItWorksRef, controls: howItWorksControls, transition: howItWorksTransition } = useScrollAnimation('fadeInUp') as {
+    ref: React.Ref<HTMLDivElement>
+    controls: any
+    transition: AnimationTransition
+  }
+  const { ref: pricingRef, controls: pricingControls, transition: pricingTransition } = useScrollAnimation('slideInRight') as {
     ref: React.Ref<HTMLDivElement>
     controls: any
     transition: AnimationTransition
@@ -53,7 +58,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white max-w-screen-2xl min-2xl:px-[71px] mx-auto overflow-hidden">
       <NavBar />
-{/* <div className="mb-[1px]" /> */}
       <motion.div
         ref={heroRef}
         initial={{ opacity: 0, y: 50 }}
@@ -65,7 +69,22 @@ export default function Home() {
       >
         <HeroSection />
       </motion.div>
-      <HowItWorks/>
+
+      {/* Add animation for HowItWorks */}
+      <motion.div
+        ref={howItWorksRef}
+        initial={{ opacity: 0, y: 40 }}
+        animate={howItWorksControls}
+        transition={{
+          duration: howItWorksTransition?.duration ?? 0.8,
+          ease: typeof howItWorksTransition?.ease === "function" ? howItWorksTransition.ease : "easeOut",
+          type: (howItWorksTransition as any)?.type,
+          bounce: (howItWorksTransition as any)?.bounce,
+        }}
+      >
+        <HowItWorks />
+      </motion.div>
+
       <motion.div
         ref={featuresRef}
         initial={{ opacity: 0, x: -100 }}
@@ -90,15 +109,16 @@ export default function Home() {
         <Testimonials />
       </motion.div>
 
+      {/* PricingHeader now slides in from the right */}
       <motion.div
         ref={pricingRef}
-        initial={{ opacity: 0, y: 150 }}
+        initial={{ opacity: 0, x: 300 }} // Start further right
         animate={pricingControls}
         transition={{
           duration: pricingTransition?.duration ?? 0.8,
           ease: typeof pricingTransition?.ease === "function" ? pricingTransition.ease : "easeOut",
           type: (pricingTransition as any)?.type,
-          bounce: (pricingTransition as any)?.bounce,
+          // bounce removed for smooth slide
         }}
       >
         <PricingHeader />
