@@ -163,7 +163,7 @@ export default function HeroSection() {
       </div>
 
       {/* Right Column - Floating Cards */}
-      <div className="hidden lg:block relative" style={{ width: 700, height: 900 }}>
+      <div className="hidden lg:block relative mt-10" style={{ width: 700, height: 900 }}>
         {/* Top Card */}
         <motion.div
           className="absolute top-0 left-16 w-[600px] h-[270px] rounded-2xl overflow-visible z-10 bg-transparent"
